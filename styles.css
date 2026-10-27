@@ -1,0 +1,84 @@
+/* Pièces à conviction — styles communs du kit PDF et de l'application.
+   Charte Consigne, gamme JEU-0xx : gris process, encre graphite, rayon 0, une seule couleur de signal,
+   le rouge scellé (#F44D61), réservé au scellé des pièces et à l'action principale. */
+:root {
+  --process: #D4D7DA; --releve: #F3F4F5; --carter: #9AA0A6; --gris: #5C636A; --graphite: #1B1E21; --acier: #2A2F34;
+  --signal: #F44D61; --trame: rgba(27, 30, 33, .075);
+  --titre: Archivo, 'Arial Narrow', sans-serif; --mono: 'Martian Mono', ui-monospace, monospace;
+  --texte: Atkinson, system-ui, sans-serif; --machine: 'Special Elite', 'Courier New', monospace; --plume: Caveat, 'Segoe Script', cursive;
+}
+
+.titre { font-family: var(--titre); font-weight: 800; font-stretch: 62%; text-transform: uppercase; line-height: .9; letter-spacing: -.005em; }
+.data { font-family: var(--mono); font-stretch: 87.5%; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
+
+/* ───────── Pièce à conviction ───────── */
+.piece { background: var(--releve); color: var(--graphite); border: 1.5px solid var(--graphite); font-family: var(--texte); font-size: 1em; line-height: 1.45; display: flex; flex-direction: column; }
+.piece__tete { display: flex; align-items: stretch; border-bottom: 1.5px solid var(--graphite); font-family: var(--mono); font-stretch: 87.5%; text-transform: uppercase; letter-spacing: .06em; font-size: .68em; font-weight: 500; }
+.piece__tete > span { padding: .55em .8em; }
+.piece__scelle { background: var(--signal); color: var(--graphite); font-weight: 700; border-right: 1.5px solid var(--graphite); }
+.piece__manche { border-right: 1px solid var(--graphite); }
+.piece__repere { margin-left: auto; color: var(--gris); }
+.piece__titre { font-family: var(--titre); font-weight: 800; font-stretch: 62%; text-transform: uppercase; line-height: .9; font-size: 2.3em; margin: .45em .55em .15em; }
+.piece__source { margin: 0 1.25em .8em; color: var(--gris); font-size: .86em; }
+.piece__corps { padding: 0 1.1em 1.1em; display: flex; flex-direction: column; gap: .8em; }
+.piece__dessin { background: var(--releve); border: 1px solid var(--carter); background-image: linear-gradient(var(--trame) 1px, transparent 1px), linear-gradient(90deg, var(--trame) 1px, transparent 1px); background-size: 16px 16px; padding: .4em; }
+.piece__dessin svg { display: block; width: 100%; height: auto; }
+.piece__legende { list-style: none; margin: 0; padding: 0; display: grid; gap: .3em; font-size: .9em; }
+.piece__legende li { display: grid; grid-template-columns: 1.7em 1fr; gap: .6em; align-items: start; }
+.ballon { display: inline-flex; justify-content: center; align-items: center; width: 1.6em; height: 1.6em; border: 1.2px solid var(--graphite); font-family: var(--mono); font-weight: 700; font-size: .8em; }
+.piece__note { margin: 0; font-size: .88em; border-top: 1px solid var(--carter); padding-top: .6em; }
+.piece__constats { margin: 0; padding-left: 1.1em; display: grid; gap: .35em; }
+.papier { background: #fff; border: 1px solid var(--carter); padding: 1em 1.1em; }
+.machine, .papier--rapport, .inventaire, .formulaire dl { font-family: var(--machine); }
+.entete-medecin { border-bottom: 1px solid var(--graphite); padding-bottom: .4em; margin-bottom: .6em; font-family: var(--machine); font-size: .9em; }
+.entete-medecin .nom { font-size: 1.15em; letter-spacing: .04em; }
+ol.machine { margin: 0; padding-left: 1.2em; display: grid; gap: .3em; font-size: .92em; }
+.conclusion { margin: .7em 0 0; text-decoration: underline; text-underline-offset: .2em; }
+.signature, .lettre__signature { font-family: var(--plume); font-size: 1.7em; text-align: right; margin: .1em 0 0; line-height: 1; }
+.inventaire { width: 100%; border-collapse: collapse; font-size: .92em; }
+.inventaire th, .inventaire td { text-align: left; padding: .35em .5em; border-bottom: 1px dotted var(--carter); vertical-align: top; }
+.inventaire th { font-weight: 400; width: 42%; }
+.crayon { font-family: var(--plume); font-size: 1.32em; line-height: 1.15; color: var(--gris); margin: .3em 0 0; }
+.plume { font-family: var(--plume); font-size: 1.25em; line-height: 1.1; }
+.menu { text-align: center; padding: 1.3em 1.2em; }
+.menu__titre { font-family: var(--titre); font-weight: 800; font-stretch: 62%; text-transform: uppercase; font-size: 1.7em; line-height: .95; }
+.menu__date { font-family: var(--mono); font-stretch: 87.5%; text-transform: uppercase; letter-spacing: .08em; font-size: .7em; margin: .4em 0 .9em; color: var(--gris); }
+.menu__plat { display: flex; justify-content: space-between; align-items: baseline; gap: 1em; padding: .35em 0; border-top: 1px dotted var(--carter); text-align: left; }
+.menu__plat .crayon { margin: 0; white-space: nowrap; }
+.registre { width: 100%; border-collapse: collapse; font-size: .85em; padding: 0; }
+.registre th { font-family: var(--mono); font-stretch: 87.5%; text-transform: uppercase; letter-spacing: .05em; font-size: .78em; font-weight: 500; text-align: left; border-bottom: 1.5px solid var(--graphite); padding: .5em .45em; }
+.registre td { border-bottom: 1px solid #c9d3dc; padding: .2em .45em; vertical-align: baseline; }
+.registre td:first-child { font-family: var(--mono); font-size: .85em; width: 2em; }
+.registre tr.annotation td { border-bottom: 1.5px solid var(--graphite); padding-top: 0; }
+.formulaire__entete { font-family: var(--machine); font-size: .95em; letter-spacing: .05em; border: 1.5px solid var(--graphite); padding: .45em .6em; text-align: center; }
+.formulaire__numero { font-family: var(--machine); text-align: right; font-size: .85em; margin: .5em 0; }
+.formulaire dl { display: grid; grid-template-columns: 9em 1fr; margin: 0; font-size: .9em; }
+.formulaire dt, .formulaire dd { border-top: 1px solid var(--carter); padding: .35em .4em; margin: 0; }
+.formulaire dt { text-transform: uppercase; font-size: .78em; letter-spacing: .05em; color: var(--gris); }
+.fragments { display: flex; flex-wrap: wrap; gap: .5em; background: var(--graphite); padding: .8em; }
+.fragment { background: #E7E1D2; padding: .45em .9em .5em; clip-path: polygon(0 12%, 6% 0, 40% 6%, 72% 0, 100% 10%, 97% 55%, 100% 92%, 66% 100%, 30% 94%, 4% 100%, 0 60%); }
+.fragment--1 { clip-path: polygon(3% 0, 55% 8%, 100% 0, 96% 48%, 100% 100%, 48% 92%, 0 100%, 5% 46%); }
+.fragment--2 { clip-path: polygon(0 0, 30% 10%, 64% 0, 100% 14%, 94% 100%, 58% 90%, 22% 100%, 0 82%); }
+.lettre { font-family: var(--plume); font-size: 1.3em; line-height: 1.25; }
+.lettre p { margin: 0 0 .5em; }
+.lettre__date { text-align: right; }
+
+/* ───────── Livret de personnage ───────── */
+.bloc { margin: 0 0 1.1em; }
+.bloc h4 { font-family: var(--mono); font-stretch: 87.5%; text-transform: uppercase; letter-spacing: .08em; font-size: .72em; font-weight: 600; margin: 0 0 .55em; padding-bottom: .35em; border-bottom: 1.5px solid currentColor; }
+.bloc p { margin: 0 0 .6em; }
+.bloc ul, .bloc ol { margin: 0 0 .6em; padding-left: 1.2em; display: grid; gap: .3em; }
+.soiree { width: 100%; border-collapse: collapse; }
+.soiree th { width: 1%; font-family: var(--mono); font-stretch: 87.5%; font-weight: 600; font-size: .78em; text-align: left; vertical-align: top; white-space: nowrap; padding: .45em .8em .45em 0; letter-spacing: .03em; }
+.soiree td { padding: .4em 0; vertical-align: top; }
+.soiree tr + tr th, .soiree tr + tr td { border-top: 1px solid rgba(127, 135, 143, .35); }
+.relations { margin: 0; display: grid; gap: .5em; }
+.relations dt { font-weight: 700; }
+.relations dt span { font-weight: 400; opacity: .7; font-size: .9em; }
+.relations dd { margin: 0; }
+.objectifs { list-style: none; padding: 0 !important; }
+.objectifs li { display: grid; grid-template-columns: 1fr auto; gap: .8em; align-items: start; padding: .5em 0; border-top: 1px solid rgba(127, 135, 143, .35); }
+.objectif__points { font-family: var(--mono); font-stretch: 87.5%; font-size: .78em; font-weight: 700; white-space: nowrap; border: 1.2px solid currentColor; padding: .15em .45em; }
+.regles { padding-left: 1.3em; }
+.carte-perso__nom { font-family: var(--titre); font-weight: 800; font-stretch: 62%; text-transform: uppercase; line-height: .9; font-size: 2.2em; }
+.carte-perso__titre { font-family: var(--mono); font-stretch: 87.5%; text-transform: uppercase; letter-spacing: .06em; font-size: .72em; margin: .4em 0 .6em; opacity: .8; }

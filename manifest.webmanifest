@@ -1,0 +1,16 @@
+{
+  "name": "Pièces à conviction",
+  "short_name": "Conviction",
+  "description": "Application de soirée des murder parties Pièces à conviction.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1B1E21",
+  "theme_color": "#1B1E21",
+  "icons": [
+    { "src": "icone.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icone-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icone-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
